@@ -61,3 +61,9 @@ foreach ($pathPattern in $knownPaths) {
 dotnet run -- --test
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-plume-sim-risk-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-plume-sim-risk-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-plume-sim-risk-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

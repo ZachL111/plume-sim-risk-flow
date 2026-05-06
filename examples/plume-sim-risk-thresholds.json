@@ -1,0 +1,17 @@
+{
+  "repo": "plume-sim-risk-flow",
+  "thresholds": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 164,
+    "watch": 96
+  },
+  "terms": [
+    "input pressure",
+    "state drift",
+    "review cost",
+    "decision risk"
+  ]
+}
