@@ -1,0 +1,73 @@
+{
+  "repo": "plume-sim-risk-flow",
+  "language": "C#",
+  "category": "Simulations",
+  "goal": "Create a C# reference implementation for risk workflows, centered on diagnostic reporting, negative fixtures, and human-readable error snapshots.",
+  "review_model": {
+    "terms": [
+      "input pressure",
+      "state drift",
+      "review cost",
+      "decision risk"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input pressure",
+      "signal": 46,
+      "slack": 49,
+      "drag": 16,
+      "confidence": 51,
+      "score": 144,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "state drift",
+      "signal": 74,
+      "slack": 28,
+      "drag": 21,
+      "confidence": 71,
+      "score": 184,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "review cost",
+      "signal": 55,
+      "slack": 35,
+      "drag": 14,
+      "confidence": 76,
+      "score": 179,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "decision risk",
+      "signal": 60,
+      "slack": 38,
+      "drag": 21,
+      "confidence": 52,
+      "score": 147,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input pressure",
+      "signal": 63,
+      "slack": 23,
+      "drag": 27,
+      "confidence": 71,
+      "score": 139,
+      "lane": "watch"
+    }
+  ]
+}
